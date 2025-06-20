@@ -1,0 +1,16 @@
+[Unit]
+Description=Spotify Kiosk
+Wants=graphical.target, network-online.target
+After=graphical.target, network-online.target
+
+[Service]
+Environment="DISPLAY=:0"
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Type=simple
+ExecStart=/bin/sh /opt/SpotifyKiosk/kiosk.sh
+Restart=no
+User=quinn
+Group=quinn
+
+[Install]
+WantedBy=graphical.target

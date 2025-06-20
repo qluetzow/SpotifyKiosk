@@ -1,0 +1,1 @@
+kiosk  ALL=NOPASSWD: /usr/bin/systemctl restart kiosk.service

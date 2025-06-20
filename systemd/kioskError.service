@@ -1,0 +1,14 @@
+[Unit]
+Description=Kiosk Error Webpage Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /opt/SpotifyKiosk/kioskError.py
+Restart=on-failure
+User=kiosk
+Group=kiosk
+
+[Install]
+WantedBy=graphical.target
