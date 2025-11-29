@@ -3,6 +3,10 @@
 KIOSK_URL="https://play.spotify.com/"
 ERROR_URL="http://localhost:8080"
 
+#Wait for the X server to start. This is needed as the graphical.target for the systemd unit
+#does not guarantee the x server is started, just that the desktop environent is.
+sleep 30s
+
 
 echo 'Starting Chromium...'
 /usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$KIOSK_URL&
